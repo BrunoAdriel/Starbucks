@@ -56,32 +56,31 @@ let vistaProductos = productos.map( function mostrarProductos(){
         }
         const botones = document.getElementsByClassName('comprar');
         for (const boton of botones) {
-            boton.addEventListener('click', ()=>{
-            const prodACarro = productos.find((prod)=>prod.id === boton.id);
-            agregarACarrito(prodACarro);
+            boton.addEventListener('click', (e)=>{
+            agregarACarrito(e.target.id);
         })
     }
     })
 
-    
+    // const prodACarro = productos.find((prod)=>prod.id === boton.id);
 
 
 //Agregar elementos al carrito
 
 function agregarACarrito(prodACarro){
-        carro.push();
+    carro.push(prodfind);
         Swal.fire({
             title: 'Genial!',
-            text: `Agregaste, ${prodACarro.nombre} al carrito`,
-            imageUrl: prodACarro.foto,
+            text: `Agregaste, ${prodfind.nombre} al carrito`,
+            imageUrl: prodfind.foto,
             imageWidth: 200,
             imageHeight: 200,
-            imageAlt: prodACarro.nombre,
+            imageAlt: prodfind.nombre,
             });
             tablaCarro.innerHTML='';
             tablaCarro.innerHTML += `
                 <tr>
-                <td><i>${prodACarro.foto}</i></td>
+                <td><i>${prodfind.foto}</i></td>
                 <td>${producto.nombre}</td>
                 <td>${producto.precio}</td>
                 <td><button onclick="elmiminarProd(event)">Eliminar</button></td>
