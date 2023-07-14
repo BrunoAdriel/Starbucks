@@ -58,7 +58,7 @@ let vistaProductos = productos.map( function mostrarProductos(){
         for (const boton of botones) {
             boton.addEventListener('click', ()=>{
             let prodACarro = productos.find((prod)=>prod.id === boton.id);
-            agregarACarrito(prodACarro);
+            console.log(prodACarro);
         })
     }
     })
@@ -69,7 +69,7 @@ let vistaProductos = productos.map( function mostrarProductos(){
 
 //Agregar elementos al carrito
 
-function agregarACarrito(prodACarro){
+function agregarACarrito(){
         carro.push(producto);
         Swal.fire({
             title: 'Genial!',
@@ -95,7 +95,7 @@ function agregarACarrito(prodACarro){
 
         localStorage.setItem("carro",JSON.stringify(carro));
 }
-agregarACarrito(prodACarro);
+
 
 
 
