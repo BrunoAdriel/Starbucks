@@ -49,13 +49,13 @@ let vistaProductos = nuestrosProductos = productos.map( function mostrarProducto
             </tr>
             `;
         }
-    //         let botones = document.getElementsByClassName('comprar');
-    //             for (const boton of botones) {
-    //                 boton.addEventListener('click', ()=>{
-    //                 let prodACarro = productos.find((prod)=>prod.id === boton.id);
-    //                 agregarACarrito(prodACarro);
-    //             })
-    // }
+            let botones = document.getElementsByClassName('comprar');
+                for (const boton of botones) {
+                    boton.addEventListener('click', ()=>{
+                    let prodACarro = productos.find((prod)=>prod.id === boton.id);
+                    agregarACarrito(prodACarro);
+                })
+    }
 
     })    
     
