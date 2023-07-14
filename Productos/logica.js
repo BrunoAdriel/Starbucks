@@ -89,9 +89,7 @@ tablaCarro = productos.map(function agregarACarrito(producto){
         document.getElementById('total').innerText = `Monto total a pagar: $ ${total}`;
 
         localStorage.setItem("carro",JSON.stringify(carro));
-        })
-
-
+})
 
 
 
