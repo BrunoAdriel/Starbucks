@@ -37,34 +37,39 @@ let btnVaciar = document.getElementById('btnVaciar');
 
 //mostrar los productos
 
-let vistaProductos = nuestrosProductos = productos.map( function mostrarProductos(){
+let vistaProductos = productos.map( function mostrarProductos(){
+
     nuestrosProductos.innerHTML = ' ';
     for(const prod of productos){
             nuestrosProductos.innerHTML += `
+            <div class="card" style="width: 18rem;">
             <tr>
-                <td><i>${prod.foto}</i></td>
-                <td>${prod.nombre}</td>
-                <td>${prod.precio}</td>
-                <td><button onclick="comprar(ev)" id="${prod.id}" class="btn btn-primary comprar">Comprar</button></td>
+                <td><i class="card-img-top">${prod.foto}</i></td>
+                <div class="card-body">
+                <td class="card-title">${prod.nombre}</td>
+                <td class="card-text">${prod.precio}</td>
+                <td><button id="${prod.id}" class="btn btn-primary comprar">Comprar</button></td>
+                </div>
             </tr>
+            </div>
             `;
         }
-            let botones = document.getElementsByClassName('comprar');
-                for (const boton of botones) {
-                    boton.addEventListener('click', ()=>{
-                    let prodACarro = productos.find((prod)=>prod.id === boton.id);
-                    agregarACarrito(prodACarro);
-                })
+        const botones = document.getElementsByClassName('comprar');
+        for (const boton of botones) {
+            boton.addEventListener('click', ()=>{
+            let prodACarro = productos.find((prod)=>prod.id === boton.id);
+            agregarACarrito(prodACarro);
+        })
     }
+    })
 
-    })    
     
 
 
 
 //Agregar elementos al carrito
 
-tablaCarro = productos.map(function agregarACarrito(producto){
+function agregarACarrito(prodACarro){
         carro.push(producto);
         Swal.fire({
             title: 'Genial!',
@@ -89,9 +94,12 @@ tablaCarro = productos.map(function agregarACarrito(producto){
         document.getElementById('total').innerText = `Monto total a pagar: $ ${total}`;
 
         localStorage.setItem("carro",JSON.stringify(carro));
-})
+}
+agregarACarrito(prodACarro);
 
 
+
+//
 
 
         //_______------_____//////
