@@ -57,8 +57,8 @@ let vistaProductos = productos.map( function mostrarProductos(){
         const botones = document.getElementsByClassName('comprar');
         for (const boton of botones) {
             boton.addEventListener('click', ()=>{
-            let prodACarro = productos.find((prod)=>prod.id === boton.id);
-            console.log(prodACarro);
+            const prodACarro = productos.find((prod)=>prod.id === boton.id);
+            agregarACarrito(prodACarro);
         })
     }
     })
@@ -66,23 +66,22 @@ let vistaProductos = productos.map( function mostrarProductos(){
     
 
 
-
 //Agregar elementos al carrito
 
-function agregarACarrito(){
-        carro.push(producto);
+function agregarACarrito(prodACarro){
+        carro.push();
         Swal.fire({
             title: 'Genial!',
-            text: `Agregaste, ${producto.nombre} al carrito`,
-            imageUrl: producto.foto,
+            text: `Agregaste, ${prodACarro.nombre} al carrito`,
+            imageUrl: prodACarro.foto,
             imageWidth: 200,
             imageHeight: 200,
-            imageAlt: producto.nombre,
+            imageAlt: prodACarro.nombre,
             });
             tablaCarro.innerHTML='';
             tablaCarro.innerHTML += `
                 <tr>
-                <td><i>${producto.foto}</i></td>
+                <td><i>${prodACarro.foto}</i></td>
                 <td>${producto.nombre}</td>
                 <td>${producto.precio}</td>
                 <td><button onclick="elmiminarProd(event)">Eliminar</button></td>
