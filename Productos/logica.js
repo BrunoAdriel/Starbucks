@@ -45,17 +45,17 @@ let vistaProductos = nuestrosProductos = productos.map( function mostrarProducto
                 <td><i>${prod.foto}</i></td>
                 <td>${prod.nombre}</td>
                 <td>${prod.precio}</td>
-                <td><button id="${prod.id}" class="btn btn-primary comprar">Comprar</button></td>
+                <td><button onclick="comprar(ev)" id="${prod.id}" class="btn btn-primary comprar">Comprar</button></td>
             </tr>
             `;
         }
-            let botones = document.getElementsByClassName('comprar');
-                for (const boton of botones) {
-                    boton.addEventListener('click', ()=>{
-                    let prodACarro = productos.find((prod)=>prod.id === boton.id);
-                    agregarACarrito(prodACarro);
-                })
-    }
+    //         let botones = document.getElementsByClassName('comprar');
+    //             for (const boton of botones) {
+    //                 boton.addEventListener('click', ()=>{
+    //                 let prodACarro = productos.find((prod)=>prod.id === boton.id);
+    //                 agregarACarrito(prodACarro);
+    //             })
+    // }
 
     })    
     
