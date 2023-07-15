@@ -1,0 +1,33 @@
+/* Estilos del Login */
+.loginCss{
+    background-image: url(./FotosProductos/fondo.jpg);
+    background-size: cover;
+    background-position: auto;
+    background-repeat: no-repeat;
+}
+
+.loginSection{
+    display: flex;
+    justify-content: center;
+    filter: drop-shadow(0 5px 15px rgba(0, 0, 0, 0.7));
+}
+
+.loginLabel{
+    display: flex;
+    justify-content: center;
+    align-content: center;
+}
+
+.btnLogin{
+    margin-top: 15px;
+    margin-right: 200px;
+}
+
+/* Estilos de Registro */
+
+.RegistroCss{
+    background-image: url(./FotosProductos/fondo2.jpg);
+    background-size: cover;
+    background-position: auto;
+    background-repeat: no-repeat;   
+}
