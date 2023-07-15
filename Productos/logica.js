@@ -68,21 +68,30 @@ let vistaProductos = productos.map( function mostrarProductos(){
 //Agregar elementos al carrito
 
 function agregarACarrito(prodACarro){
-    carro.push(prodfind);
+    let prodFind = productos.map((prod)=>{
+        return{
+            id : prod.id,
+            nombre: prod.nombre,
+            precio : prod.precio,
+            foto: prod.foto
+        }
+    })
+
+    carro.push(prodFind);
         Swal.fire({
             title: 'Genial!',
-            text: `Agregaste, ${prodfind.nombre} al carrito`,
-            imageUrl: prodfind.foto,
+            text: `Agregaste, ${prod.nombre} al carrito`,
+            imageUrl: prod.foto,
             imageWidth: 200,
             imageHeight: 200,
-            imageAlt: prodfind.nombre,
+            imageAlt: prod.nombre,
             });
             tablaCarro.innerHTML='';
             tablaCarro.innerHTML += `
                 <tr>
-                <td><i>${prodfind.foto}</i></td>
-                <td>${producto.nombre}</td>
-                <td>${producto.precio}</td>
+                <td><i>${prod.foto}</i></td>
+                <td>${prod.nombre}</td>
+                <td>${prodFind.precio}</td>
                 <td><button onclick="elmiminarProd(event)">Eliminar</button></td>
                 </tr>
             `
@@ -92,8 +101,9 @@ function agregarACarrito(prodACarro){
         document.getElementById('total').innerText = `Monto total a pagar: $ ${total}`;
 
         localStorage.setItem("carro",JSON.stringify(carro));
-}
 
+    } 
+    
 
 
 
