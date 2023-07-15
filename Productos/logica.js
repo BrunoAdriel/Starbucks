@@ -12,12 +12,12 @@ let btnVaciar = document.getElementById('btnVaciar');
 
 function mostrarTabla(){
     tablaCarro.innerHTML='';
-    for(const prod of productos){
+    for(const prod of carro){
         tablaCarro.innerHTML += `
         <tr>
-        <td>${prod.foto}</td>
+        <td><img src="${prod.foto}" alt="${prod.nombre}"></img></td>
         <td>${prod.nombre}</td>
-        <td><i>${prod.precio}</i></td>
+        <td>${prod.precio}</td>
         <td><button onclick="eliminarProd(event)">Eliminar</button></td>
         </tr>
         `;
@@ -31,14 +31,14 @@ function mostrarTabla(){
 
 //mostrar los productos
 
-let vistaProductos = productos.map( function mostrarProductos(){
+const vistaProductos = productos.map( function mostrarProductos(){
 
-    nuestrosProductos.innerHTML = ' ';
+    nuestrosProductos.innerHTML = '';
     for(const prod of productos){
             nuestrosProductos.innerHTML += `
             <div class="card" style="width: 18rem;">
             <tr>
-                <td><img class="card-img-top" src="${prod.foto}"></img></td>
+                <td><img class="card-img-top" src="${prod.foto}" alt="${prod.nombre}" ></img></td>
                 <div class="card-body">
                 <td class="card-title">${prod.nombre}</td>
                 <td class="card-text">${prod.precio}</td>
@@ -74,15 +74,17 @@ let prodFind = productos.find((el)=> el.id === parseInt(prodACarro));
             });
             //Que los productos se agreguen al carro
             tablaCarro.innerHTML='';
+            for (const prodFind of carro) {
+                
             tablaCarro.innerHTML += `
                 <tr>
-                <td><img src="${prodFind.foto}"></img></td>
+                <td><img src="${prodFind.foto}" alt="${prodFind.nombre}"></img></td>
                 <td>${prodFind.nombre}</td>
                 <td>${prodFind.precio}</td>
                 <td><button onclick="eliminarProd(event)">Eliminar</button></td>
                 </tr>
             `
-
+        }
         //calcular el total
         let total = carro.reduce((ac,prod)=> ac + prod.precio, 0);
         document.getElementById('total').innerText = `Monto total a pagar: $ ${total}`;
