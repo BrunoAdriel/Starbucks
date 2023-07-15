@@ -44,7 +44,7 @@ let vistaProductos = productos.map( function mostrarProductos(){
             nuestrosProductos.innerHTML += `
             <div class="card" style="width: 18rem;">
             <tr>
-                <td><img class="card-img-top">${prod.foto}</img></td>
+                <td><img class="card-img-top" src=${prod.foto}></img></td>
                 <div class="card-body">
                 <td class="card-title">${prod.nombre}</td>
                 <td class="card-text">${prod.precio}</td>

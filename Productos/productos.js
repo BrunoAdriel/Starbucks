@@ -2,7 +2,7 @@ const productos =[
     {
         id: 1,
         nombre: "Medialuna",
-        foto: "../FotosProductos/Medialuna.jpg",
+        foto: "./FotosProductos/Medialuna.jpg",
         precio: 600
     },
     {
