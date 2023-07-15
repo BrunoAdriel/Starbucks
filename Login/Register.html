@@ -9,36 +9,37 @@
     <title>Registrarse</title>
 </head>
 <body class="RegistroCss">
-    <a href="../index.html">Menu Principal</a>
+    <a href="../index.html"><img src="../FotosProductos/logo.png" class="logo"></a>
+<div class="loginSection">
 <section class="card text-center w-50">
     <h1 class="card-header">Registro</h1>
     <form class="card-body" id="registerForm">
         <div class="row mb-3">
             <label class="col-sm-2 col-form-label">Nombre</label>
-            <div class="col-sm-3">
+            <div class="col-sm-4">
                 <input type="text" class="form-control" id="nombre" required autofocus>
             </div>
             <label class="col-sm-2 col-form-label">Email</label>
-            <div class="col-sm-5">
+            <div class="col-sm-4">
                 <input type="mail" class="form-control" placeholder="Email" id="email" required >
             </div>
-            <label for="inputPassword6" class="col-form-label">Contraseña</label>
-            <div class="col-sm-7">
-                <input type="password" placeholder="***" class="col-sm-2 col-form-label" id="contrasenia inputPassword6" required>
+            <label for="inputPassword6" class="col-sm-2 col-form-label">Contraseña</label>
+            <div class="col-sm-4">
+                <input type="password" placeholder="***" class="form-control inputRgst" id="contrasenia inputPassword6" required>
             </div>
-                <label for="inputPassword6" class="col-form-label">Confirmar Contraseña</label>
-            <div class="col-sm-7">
-                <input type="password" class="col-sm-2 col-form-label" placeholder="***" id="contraseniaConfirm  inputPassword6" required>
+                <label for="inputPassword6" class="col-sm-2 col-form-label">Confirmar Contraseña</label>
+            <div class="col-sm-4">
+                <input type="password" class="form-control inputRgst" placeholder="***" id="contraseniaConfirm  inputPassword6" required>
             </div>
         <div>
             <input type="submit" class="btn btn-outline-success" value="Registro">
         </div>
         </div>
     </form>
-    <p>Para volver a la pagina de ingreso,<a href="Login.html">click aquí.</a></p>
-    <p>Volver al <a href="../index.html">menu principal</a></p>
-
+    <p>Para volver a la pagina de ingreso,<a href="Login.html" class="aLinks">click aquí.</a></p>
+    <p>Volver al <a href="../index.html" class="aLinks">menu principal</a></p>
 </section>
+</div>
 
 <!--sweet alert-->
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>

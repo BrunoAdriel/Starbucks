@@ -1,3 +1,14 @@
+/* Estilos index */
+
+
+/* Estilo del logo */
+.logo{
+    margin: 10px 0 0 10px;
+    height: 75px;
+    width: 75px;
+}
+
+
 /* Estilos del Login */
 .loginCss{
     background-image: url(./FotosProductos/fondo.jpg);
@@ -23,6 +34,12 @@
     margin-right: 200px;
 }
 
+.aLinks{
+    text-decoration: none;
+    font-weight: bold;
+    color: green;
+}
+
 /* Estilos de Registro */
 
 .RegistroCss{
@@ -30,4 +47,8 @@
     background-size: cover;
     background-position: auto;
     background-repeat: no-repeat;   
+}
+
+.inputRgst{
+    margin-top: 15px;
 }

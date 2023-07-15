@@ -4,10 +4,10 @@ const registerForm = document.querySelector('#registerForm');
 //obtencion de datos y guardado en local
 registerForm.addEventListener('submit',(e)=>{
     e.preventDefault();
-    const nombre = document.querySelector('#nombre').value;
-    const email = document.querySelector('#email').value;
-    const contrasenia = document.querySelector('#contrasenia').value;
-    const contraseniaConfirm = document.querySelector('#contraseniaConfirm').value;
+    let nombre = document.getElementById('nombre').value;
+    let email = document.getElementById('email').value;
+    let contrasenia = document.getElementById('contrasenia').value;
+    let contraseniaConfirm = document.getElementById('contraseniaConfirm').value;
 
     const usuarios = JSON.parse(localStorage.getItem('usuariosNuevos')) || [];
     const usuarioRegistrado = usuarios.find (e => e.email === email );
