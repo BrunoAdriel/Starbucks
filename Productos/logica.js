@@ -5,8 +5,8 @@ let tablaCarro = document.getElementById('tablaCarro');
 let btnFinalizar = document.getElementById('btnFinalizar');
 let btnVaciar = document.getElementById('btnVaciar');
 
-//si hay algo guardado en el local
-(carro != null ) && mostrarTabla();
+//si hay algo guardado en el local 
+(carro.length != 0 ) && mostrarTabla();
 
 //mostrar si encuentra algo guardado en el localStorage
 
@@ -28,26 +28,6 @@ function mostrarTabla(){
     let infoTotal =document.getElementById('total');
     infoTotal.innerHTML="Monto total a pagar: $"+pagoTotal;
 }
-
-
-//boton Eliminar
-function eliminarProd(ev){
-    let fila  = ev.target.parentElement.parentElement;
-    let id = fila.children[0].innerText;
-    let indice =  carro.findIndex(producto =>  producto.id === id);
-    
-    //Remover el producto del carro y la fila
-    carro.splice(indice,  1);
-    fila.remove();
-
-    //remover el total a pagar
-    let productosModificados =  carro.reduce((ac, prod)=>ac+ prod.precio, 0);
-    document.getElementById('total').innerText="Monto total a pagar: $"+productosModificados;
-
-    //Remover del  local
-    localStorage.setItem("carro", JSON.stringify(carro));
-}
-
 
 //mostrar los productos
 
@@ -99,7 +79,7 @@ let prodFind = productos.find((el)=> el.id === parseInt(prodACarro));
                 <td><img src="${prodFind.foto}"></img></td>
                 <td>${prodFind.nombre}</td>
                 <td>${prodFind.precio}</td>
-                <td><button onclick="elmiminarProd(event)">Eliminar</button></td>
+                <td><button onclick="eliminarProd(event)">Eliminar</button></td>
                 </tr>
             `
 
@@ -109,10 +89,48 @@ let prodFind = productos.find((el)=> el.id === parseInt(prodACarro));
 
         localStorage.setItem("carro",JSON.stringify(carro));
 } 
+
+//Funcionalidad de los botones 
+
+//Boton Eliminar
+function eliminarProd(ev){
+    let fila  = ev.target.parentElement.parentElement;
+    let id = fila.children[0].innerText;
+    let indice =  carro.findIndex(producto =>  producto.id === id);
     
+    //Remover el producto del carro y la fila
+    carro.splice(indice,  1);
+    fila.remove();
 
+    //remover el total a pagar
+    let productosModificados =  carro.reduce((ac, prod)=>ac+ prod.precio, 0);
+    document.getElementById('total').innerText="Monto total a pagar: $"+productosModificados;
 
+    //Remover del  local
+    localStorage.setItem("carro", JSON.stringify(carro));
+}
 
+// Boton finalizar compra
+
+btnFinalizar.onclick=()=>{
+    carro =[];
+    document.getElementById('tablaCarro').innerHTML = '';
+    document.getElementById('total').innerText="Total a pagar $:";
+    Swal.fire('Gracias por tu compra pronto recibiras tu pedido','Podes volver a comprar si te quedaste con ganas de algo mas 🤔', 'success');
+
+    // eliminar el local
+    localStorage.removeItem('carro');
+}
+
+// Boton vaciar carro
+
+btnVaciar.onclick=()=>{
+    carro =[];
+    document.getElementById('tablaCarro').innerHTML = '';
+    document.getElementById('total').innerText="Total a pagar $:";
+    Swal.fire('Hemos vaciado el carrito','Ya podes seleccionar nuevamente','success')
+    localStorage.removeItem('carro');
+}
 //
 
 ///
