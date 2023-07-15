@@ -12,13 +12,14 @@ let btnVaciar = document.getElementById('btnVaciar');
 
 function mostrarTabla(){
     tablaCarro.innerHTML='';
+    //Se pide que por cada  elemento del array devuelva
     for(const prod of carro){
         tablaCarro.innerHTML += `
         <tr>
         <td><img src="${prod.foto}" alt="${prod.nombre}"></img></td>
         <td>${prod.nombre}</td>
         <td>${prod.precio}</td>
-        <td><button onclick="eliminarProd(event)">Eliminar</button></td>
+        <td><button onclick="eliminarProd(event)">❌</button></td>
         </tr>
         `;
     }
@@ -75,13 +76,12 @@ let prodFind = productos.find((el)=> el.id === parseInt(prodACarro));
             //Que los productos se agreguen al carro
             tablaCarro.innerHTML='';
             for (const prodFind of carro) {
-                
             tablaCarro.innerHTML += `
                 <tr>
                 <td><img src="${prodFind.foto}" alt="${prodFind.nombre}"></img></td>
                 <td>${prodFind.nombre}</td>
                 <td>${prodFind.precio}</td>
-                <td><button onclick="eliminarProd(event)">Eliminar</button></td>
+                <td><button onclick="eliminarProd(event)">❌</button></td>
                 </tr>
             `
         }
@@ -133,36 +133,14 @@ btnVaciar.onclick=()=>{
     Swal.fire('Hemos vaciado el carrito','Ya podes seleccionar nuevamente','success')
     localStorage.removeItem('carro');
 }
-//
 
-///
-// let prodFind = productos.map((prod)=>{
-//     return{
-//         id: prod.id,
-//         nombre :prod.nombre,
-//         foto : prod.foto,
-//         precio: prod.precio
-//     }
-// })
-////
-///
-        //_______------_____//////
-// function agregarACarrito(productos){
-//     carro.push(productos);
-//     Swal.fire({
-//         title: 'Genial!',
-//         text: `Agregaste, ${productos.nombre} al carrito`,
-//         imageUrl: productos.foto,
-//         imageWidth: 200,
-//         imageHeight: 200,
-//         imageAlt: productos.nombre,
-//         });
-//         tablaCarro.innerHTML += `
-//             <tr>
-//             <td><i>${productos.foto}</i></td>
-//             <td>${productos.nombre}</td>
-//             <td>${productos.precio}</td>
-//             <td><button onclick="elmiminarProd(event)">Eliminar</button></td>
-//             </tr>
-//         `
-// }
+//Filtro para buscar productos
+
+// let buscar = document.getElementById('buscar');
+
+{/*<div>
+<label for="buscar">
+<input type="text" placeholder="Buscar 🔍" id="buscar">
+</label>
+</div>
+</div> */}
