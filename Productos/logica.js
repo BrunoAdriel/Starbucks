@@ -44,7 +44,7 @@ let vistaProductos = productos.map( function mostrarProductos(){
             nuestrosProductos.innerHTML += `
             <div class="card" style="width: 18rem;">
             <tr>
-                <td><i class="card-img-top">${prod.foto}</i></td>
+                <td><img class="card-img-top">${prod.foto}</img></td>
                 <div class="card-body">
                 <td class="card-title">${prod.nombre}</td>
                 <td class="card-text">${prod.precio}</td>
@@ -68,7 +68,7 @@ let vistaProductos = productos.map( function mostrarProductos(){
 //Agregar elementos al carrito
 
 function agregarACarrito(prodACarro){
-let prodFind = productos.find((el)=> el.id === prodACarro);
+let prodFind = productos.find((el)=> el.id === parseInt(prodACarro));
 ///
 // let prodFind = productos.map((prod)=>{
 //     return{

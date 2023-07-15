@@ -10,20 +10,34 @@
 </head>
 <body>
     <a href="../index.html">Menu Principal</a>
-<section>
-    <h1>Registro</h1>
-    <form id="registerForm">
-        <label>Nombre</label>
-        <input type="text" placeholder="Nombre" id="nombre" required autofocus>
-        <label>Email</label>
-        <input type="mail" placeholder="Email" id="email" required >
-        <label>Contraseña</label>
-        <input type="password" placeholder="***" id="contrasenia" required>
-        <label>Confirmar Contraseña</label>
-        <input type="password" placeholder="***" id="contraseniaConfirm" required>
-        <input type="submit" value="Registro">
+<section class="card text-center w-75 h-75 d-inline-block">
+    <h1 class="card-header">Registro</h1>
+    <form class="card-body" id="registerForm">
+        <div class="row mb-3">
+            <label class="col-sm-2 col-form-label">Nombre</label>
+            <div class="col-sm-3">
+                <input type="text" class="form-control" id="nombre" required autofocus>
+            </div>
+            <label class="col-sm-2 col-form-label">Email</label>
+            <div class="col-sm-5">
+                <input type="mail" class="form-control" placeholder="Email" id="email" required >
+            </div>
+            <label for="inputPassword6" class="col-form-label">Contraseña</label>
+            <div class="col-sm-7">
+                <input type="password" placeholder="***" class="col-sm-2 col-form-label" id="contrasenia inputPassword6" required>
+            </div>
+                <label for="inputPassword6" class="col-form-label">Confirmar Contraseña</label>
+            <div class="col-sm-7">
+                <input type="password" class="col-sm-2 col-form-label" placeholder="***" id="contraseniaConfirm  inputPassword6" required>
+            </div>
+        <div>
+            <input type="submit" class="btn btn-outline-success" value="Registro">
+        </div>
+        </div>
     </form>
     <p>Para volver a la pagina de ingreso,<a href="Login.html">click aquí.</a></p>
+    <p>Volver al <a href="../index.html">menu principal</a></p>
+
 </section>
 
 <!--sweet alert-->

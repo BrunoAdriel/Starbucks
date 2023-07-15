@@ -9,24 +9,26 @@
 </head>
 <body>
     <a href="../index.html">Menu Principal</a>
-<h1>Login</h1>
-    <form id="loginForm">
+<section class="card text-center w-75">
+<h1 class="card-header">Login</h1>
+    <form class="card-body" id="loginForm">
         <div class="row mb-3">
             <label for="inputEmail3" class="col-sm-2 col-form-label">Email</label>
-            <div class="col-sm-8">
+            <div class="col-sm-5">
                 <input type="email" class="form-control" placeholder="@" id="email inputEmail3" required autofocus>
             </div>
         </div>
         <div class="row mb-3">
         <label for="inputPassword3" class="col-sm-2 col-form-label">Contraseña</label>
-            <div class="col-sm-8">
+            <div class="col-sm-5">
             <input type="password" class="form-control" placeholder="***" id="contrasenia inputPassword3" required>
-                <input type="submit" value="ingresar">
+                <input type="submit" class="btn btn-outline-success" value="Ingresar">
             </div>
         </div>
     </form>
     <p>No tenes cuenta?<a href="Register.html">Registrate</a></p>
-
+    <p>Volver al <a href="../index.html">menu principal</a></p>
+</section>
 
 <!--sweet alert-->
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
