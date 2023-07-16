@@ -1,8 +1,19 @@
 
-//filtros del JSON
-// let productos ;
-// obtenerProdJSON(); 
+//filtros del JSON 
+fetch("../../Starbucks-master/Productos/productos.json")
+.then(res => res.json())
+.then(data => {
+    console.log(data)
+    mostrarCards(data)
+})
 
+
+// function obtenerProdJSON(){
+//     const URLJSON = "/productos.json";
+//     fetch(URLJSON)
+//     .then(resultado = resultado.json())
+//     .then(data = {
+//         const :productos = data,
 
 let carro = JSON.parse(localStorage.getItem('carro')) || [];
 let nuestrosProductos =  document.getElementById('nuestrosProductos');
@@ -37,19 +48,22 @@ function mostrarTabla(){
 
 //mostrar los productos
 
-const vistaProductos = productos.map( function mostrarProductos(){
+function mostrarCards(array) {
+    
+    
+    const vistaProductos = array.map( function mostrarProductos(){
 
     nuestrosProductos.innerHTML = '';
-    for(const prod of productos){
+    for(const prod of array){
             nuestrosProductos.innerHTML += `
             <div class="card" style="width: 18rem;">
             <tr>
-                <td><img class="card-img-top" src="${prod.foto}" alt="${prod.nombre}" ></img></td>
-                <div class="card-body">
-                <td class="card-title">${prod.nombre}</td>
-                <td class="card-text">${prod.precio}</td>
-                <td><button id="${prod.id}" class="btn btn-primary comprar">Comprar</button></td>
-                </div>
+            <td><img class="card-img-top" src="${prod.foto}" alt="${prod.nombre}" ></img></td>
+            <div class="card-body">
+            <td class="card-title">${prod.nombre}</td>
+            <td class="card-text">${prod.precio}</td>
+            <td><button id="${prod.id}" class="btn btn-primary comprar">Comprar</button></td>
+            </div>
             </tr>
             </div>
             `;
@@ -58,10 +72,11 @@ const vistaProductos = productos.map( function mostrarProductos(){
         const botones = document.getElementsByClassName('comprar');
         for (const boton of botones) {
             boton.addEventListener('click', (e)=>{
-            agregarACarrito(e.target.id);
-        })
-    }
+                agregarACarrito(e.target.id);
+            })
+        }
     })
+}
 
 //Agregar elementos al carrito
 

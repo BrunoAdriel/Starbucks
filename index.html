@@ -8,13 +8,18 @@
     <link href="estilos.css" rel="stylesheet">
     <title>Starbucks Coffe</title>
 </head>
-<header class="navbar">
-<a href="index.html"><img src="/FotosProductos/logo.png"  class="logo"></a>
-<div>
-    <ul>
-        <li><a href="/Login/Login.html">Ingresar</a></li>
-    </ul>
-</div>
+<header>
+<nav class="navbar-expand-lg bg-body-tertiary">
+    <div class="container-fluid navbar">
+        <a class="navbar-brand"  href="index.html"><img src="/FotosProductos/logo.png" class="logo"></a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item colorText">
+            <a class="nav-link active  colorText" aria-current="page" href="./Login/Login.html">Ingresar</a>
+            </li>
 </header>
 
 <body class="body">
@@ -43,7 +48,7 @@
 </body>
 <!--sweet alert-->
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-    <script src="Productos/productos.js"></script>
+    <!-- <script src="Productos/productos.js"></script> -->
     <script src="Productos/logica.js"></script>
 </body>
 </html>

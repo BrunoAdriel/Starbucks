@@ -1,16 +1,6 @@
 /* Estilos index */
 .navbar{
     background-color: rgb(13, 65, 53);
-    display: flex;
-    justify-content:flex-start;
-}
-
-li{
-    display: flex;
-}a{
-    display: flex;
-    text-decoration: none;
-    color: white;
 }
 
 
