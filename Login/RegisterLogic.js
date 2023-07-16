@@ -18,6 +18,7 @@ registerForm.addEventListener('submit',(e)=>{
             text: 'Parece que ya hay un usuario creado con este Email',
         });
     } else if(contrasenia != contraseniaConfirm){
+
         Swal.fire({
             icon: 'error',
             title: 'Constraseñas distintas!',
@@ -38,3 +39,6 @@ registerForm.addEventListener('submit',(e)=>{
     localStorage.setItem('usuariosNuevos', JSON.stringify(usuarios))
 
 })
+
+// localStorage.removeItem('usuariosNuevos');
+// localStorage.setItem('usuariosNuevos', JSON.stringify(usuarios))
