@@ -1,9 +1,42 @@
+/* fuentes */
+body{
+    font-family: 'Roboto Mono', monospace;
+    font-weight: 700;
+}
+
+
+
 /* Estilos index */
+.backgruound{
+    background-color: blanchedalmond;
+}
+
 .navbar{
     background-color: rgb(13, 65, 53);
 }
 
+.alinearContenido{
+    display: flex;
+    flex-direction: column;
+    align-self: center;
+    text-align: center;
+}section{
+    font-weight: bold;
+}button{
+    height: min-content;
+    width: min-content;
+    align-self: center;
+}
 
+.container{
+    height: 400px;
+    width: 300px;
+}
+
+.botonFinalizar{
+    height: auto;
+    width: auto;
+}
 /* Estilo del logo */
 .logo{
     margin: 10px 0 0 10px;

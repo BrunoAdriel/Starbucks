@@ -49,15 +49,21 @@ function mostrarCards(array) {
     nuestrosProductos.innerHTML = '';
     for(const prod of array){
             nuestrosProductos.innerHTML += `
-            <div class="card" style="width: 18rem;">
-            <tr>
-            <td><img class="card-img-top" src="${prod.foto}" alt="${prod.nombre}" ></img></td>
-            <div class="card-body">
-            <td class="card-title">${prod.nombre}</td>
-            <td class="card-text">${prod.precio}</td>
-            <td><button id="${prod.id}" class="btn btn-primary comprar">Comprar</button></td>
-            </div>
-            </tr>
+            <div class="col">
+                <div class="card container">
+                    <tr>
+                    <td><img class="card-img-top" src="${prod.foto}" alt="${prod.nombre}" ></img></td>
+                    <div class="card-body alinearContenido">
+                        <section>
+                        <td class="card-title ">${prod.nombre}</td>
+                        </section>
+                        <section>
+                        <td class="card-text ">${prod.precio}</td>
+                        </section>
+                        <td><button id="${prod.id}" class="btn btn-outline-success comprar">$$$</button></td>
+                    </div>
+                    </tr>
+                </div>
             </div>
             `;
         }
