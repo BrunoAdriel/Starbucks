@@ -18,7 +18,6 @@ registerForm.addEventListener('submit',(e)=>{
             text: 'Parece que ya hay un usuario creado con este Email',
         });
     } else if(contrasenia != contraseniaConfirm){
-
         Swal.fire({
             icon: 'error',
             title: 'Constraseñas distintas!',
@@ -31,14 +30,10 @@ registerForm.addEventListener('submit',(e)=>{
             title: 'Registro Exitoso 🎉!',
             text: 'te llevaremos a la pagina de Ingreso',
         });
-        window.location.href = 'Login.html'
+        //subida de datos al array en el caso de que se cumplan las condiciones
+        usuarios.push({nombre: nombre, email: email, contrasenia: contrasenia, contraseniaConfirm: contraseniaConfirm})
+        localStorage.setItem('usuariosNuevos', JSON.stringify(usuarios))
+
     }
-
-//subida de datos al array en el caso de que se cumplan las condiciones
-    usuarios.push({nombre: nombre, email: email, contrasenia: contrasenia, contraseniaConfirm: contraseniaConfirm})
-    localStorage.setItem('usuariosNuevos', JSON.stringify(usuarios))
-
+    window.location.href = 'Login.html'
 })
-
-// localStorage.removeItem('usuariosNuevos');
-// localStorage.setItem('usuariosNuevos', JSON.stringify(usuarios))
