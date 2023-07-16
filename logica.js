@@ -1,19 +1,12 @@
 
 //filtros del JSON 
-fetch("../../Starbucks-master/Productos/productos.json")
+fetch("/productos.json")
 .then(res => res.json())
 .then(data => {
-    console.log(data)
     mostrarCards(data)
+    productos = data;
 })
 
-
-// function obtenerProdJSON(){
-//     const URLJSON = "/productos.json";
-//     fetch(URLJSON)
-//     .then(resultado = resultado.json())
-//     .then(data = {
-//         const :productos = data,
 
 let carro = JSON.parse(localStorage.getItem('carro')) || [];
 let nuestrosProductos =  document.getElementById('nuestrosProductos');
