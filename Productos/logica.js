@@ -1,4 +1,9 @@
 
+//filtros del JSON
+// let productos ;
+// obtenerProdJSON(); 
+
+
 let carro = JSON.parse(localStorage.getItem('carro')) || [];
 let nuestrosProductos =  document.getElementById('nuestrosProductos');
 let tablaCarro = document.getElementById('tablaCarro');
@@ -133,6 +138,56 @@ btnVaciar.onclick=()=>{
     Swal.fire('Hemos vaciado el carrito','Ya podes seleccionar nuevamente','success')
     localStorage.removeItem('carro');
 }
+
+
+// OPCION 1
+// function obtenerProdJSON(){
+//     const URLJSON = "/productos.json";
+//     fetch(URLJSON)
+//     .then(resultado = resultado.json())
+//     .then(data = {
+//         const :productos = data,
+
+
+// OPCION  2
+// const respuesta = await fetch(URLJSON);
+    // const data = await respuesta.json();
+    // console.log(data);
+    // productos = data;
+
+    // funcion
+//     const :vistaProductos = productos.map( function mostrarProductos(){
+
+//         nuestrosProductos.innerHTML = '';
+//         for(const prod of productos){
+//                 nuestrosProductos.innerHTML += `
+//                 <div class="card" style="width: 18rem;">
+//                 <tr>
+//                     <td><img class="card-img-top" src="${prod.foto}" alt="${prod.nombre}" ></img></td>
+//                     <div class="card-body">
+//                     <td class="card-title">${prod.nombre}</td>
+//                     <td class="card-text">${prod.precio}</td>
+//                     <td><button id="${prod.id}" class="btn btn-primary comprar">Comprar</button></td>
+//                     </div>
+//                 </tr>
+//                 </div>
+//                 `;
+//             }
+//             // funcion del boton comprar
+//             const botones = document.getElementsByClassName('comprar');
+//             for (const boton of botones) {
+//                 boton.addEventListener('click', (e)=>{
+//                 agregarACarrito(e.target.id);
+//             })
+//         }
+//         })
+//     })
+// }
+
+
+
+
+
 
 //Filtro para buscar productos
 
